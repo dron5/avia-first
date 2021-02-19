@@ -1,0 +1,30 @@
+$appColor: #f3f7fa;
+$backgroundAppColor: #e5e5e5;
+$backgroundColor: #fff;
+$boxShadow: 0 2px 8px rgba(0,0,0,.1);
+
+.Filter{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #4a4a4a;
+  box-sizing: border-box;
+  height: 252px;
+  width: 232px;
+  padding: 20px;
+  margin-left: 103px;
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow: $boxShadow;
+  background-color: $backgroundColor;
+}
+.Filter__title{
+  white-space: nowrap;
+  font-family: 'Arial';
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0.5px;
+}
+.ant-checkbox-wrapper{
+  margin: 19px 0 0 0 !important;
+}
