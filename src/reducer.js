@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const initialState = {
   all: false,
   none: false,
@@ -10,9 +9,19 @@ const initialState = {
   tickets: [],
 };
 
-const enumReduser = (state, action) => 
-   ({ ...state, [action.type.toLowerCase()]: !state[action.type.toLowerCase()] })
-;
+const enumReduser = (state, action) => {
+  const { none, one, two, three } = state;
+  const enumList = {
+    none, one, two, three, 
+    [action.type.toLowerCase()]: !state[action.type.toLowerCase()]
+  };
+  const answer = Object.values(enumList).filter(el => el === true);
+  if (!(answer.length === 0) && !(answer.length === 4)) {
+    return  { ...enumList, all: false };
+  } 
+  return { ...enumList, all: enumList.none}; 
+ };
+
 const allReduser = (state) => {
   const enumerate = ['all', 'none', 'one', 'two', 'three']
     .reduce((acc, el) => ({ ...acc, [el]: !state.all }), {});
@@ -27,7 +36,7 @@ const reduser = (state = initialState, action) => {
     case 'ONE':
     case 'TWO':
     case 'THREE':
-      return enumReduser(state, action);
+      return { ...state, ...enumReduser(state, action) };
     case 'CHEAP':
       return {...state, cheap: true, fast: false};
     case 'FAST':
