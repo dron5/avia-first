@@ -5,25 +5,26 @@ import * as actions from '../actions';
 
 import classes from './Header.module.scss';
 
-const Header = ({ cheap, fast, onCheap, onFast }) => {
-  console.log(cheap, fast);
-  return (
+const Header = ({ cheap, fast, onCheap, onFast }) => (
     <header className={classes.App__header}>
       <button
         type="button"
         onClick={onCheap}
-        className={`${classes['Header__btn-cheap']}`}>
+        className={cheap ?
+          `${classes['Header__btn-cheap']} ${classes.btn__active}`
+          : `${classes['Header__btn-cheap']}`}>
         Самый дешёвый
       </button>
       <button
         onClick={onFast}
         type="button"
-        className={`${classes['Header__btn-fast']} ${classes.btn__active}`}>
+        className={fast ?
+          `${classes['Header__btn-fast']} ${classes.btn__active}`
+          : `${classes['Header__btn-fast']}`}>
         Самый быстрый
     </button>
     </header>
   );
-};
 
 const mapStateToProps = (state) => ({
   cheap: state.cheap,
