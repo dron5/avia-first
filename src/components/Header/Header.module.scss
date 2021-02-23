@@ -16,7 +16,7 @@ $boxShadow: 0 2px 8px rgba(0,0,0,.1);
   border: none;
   width: 50%;
   height: 50px !important;
-  background-color: $backgroundFooter;
+  background-color: #fff;
   border-top-left-radius: 5px !important;
   border-bottom-left-radius: 5px !important;
 }
@@ -28,4 +28,7 @@ $boxShadow: 0 2px 8px rgba(0,0,0,.1);
   background-color: #fff;
   border-top-right-radius: 5px !important;
   border-bottom-right-radius: 5px !important;
+}
+.btn__active{
+  background-color: $backgroundFooter;
 }

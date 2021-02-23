@@ -12,13 +12,13 @@ const Header = ({ cheap, fast, onCheap, onFast }) => {
       <button
         type="button"
         onClick={onCheap}
-        className={classes['Header__btn-cheap']}>
+        className={`${classes['Header__btn-cheap']}`}>
         Самый дешёвый
       </button>
       <button
         onClick={onFast}
         type="button"
-        className={classes['Header__btn-fast']}>
+        className={`${classes['Header__btn-fast']} ${classes.btn__active}`}>
         Самый быстрый
     </button>
     </header>
