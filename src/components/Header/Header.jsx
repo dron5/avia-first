@@ -1,23 +1,25 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import * as actions from '../../store/actions';
 
 import classes from './Header.module.scss';
 
-const Header = ({ cheap, fast, onCheap, onFast }) => (
+const Header = ({ cheap, fast, onClick }) => (
     <header className={classes.App__header}>
       <button
         type="button"
-        onClick={onCheap}
+        name="CHEAP"
+        onClick={onClick}
         className={cheap ?
           `${classes['Header__btn-cheap']} ${classes.btn__active}`
           : `${classes['Header__btn-cheap']}`}>
         Самый дешёвый
       </button>
       <button
-        onClick={onFast}
+        onClick={onClick}
         type="button"
+        name="FAST"
         className={fast ?
           `${classes['Header__btn-fast']} ${classes.btn__active}`
           : `${classes['Header__btn-fast']}`}>

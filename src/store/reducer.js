@@ -25,7 +25,7 @@ const enumReduser = (state, action) => {
 const allReduser = (state) => {
   const enumerate = ['all', 'none', 'one', 'two', 'three']
     .reduce((acc, el) => ({ ...acc, [el]: !state.all }), {});
-return enumerate;
+  return enumerate;
 };
 
 const reduser = (state = initialState, action) => {
