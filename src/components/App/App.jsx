@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button } from "antd";
 
 import Filter from "../Filter";
 import Header from "../Header";
+import Footer from "../Footer";
 import classes from './App.module.scss';
 import fly from'../../img/Fly.svg';
 
@@ -51,9 +51,7 @@ const App = () => (
               </div>
             </div>
           </main>
-          <footer className={classes.App__footer}>
-            <Button type="primary"className={classes.Footer__btn}>Показать ещё 5 билетов</Button>
-          </footer>
+          <Footer />
         </div>
       </div>
     </div>

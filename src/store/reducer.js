@@ -40,7 +40,9 @@ const reduser = (state = initialState, action) => {
     case 'CHEAP':
       return {...state, cheap: true, fast: false};
     case 'FAST':
-      return {...state, fast: true, cheap: false};
+      return { ...state, fast: true, cheap: false };
+    case 'ADD_TICKETS':
+      return {...state, tickets: [...state.tickets, ...action.payload]};
     default:
       return state;
   }
