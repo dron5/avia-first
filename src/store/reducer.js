@@ -7,6 +7,7 @@ const initialState = {
   cheap: true,
   fast: false,
   tickets: [],
+  searchId: '',
 };
 
 const enumReduser = (state, action) => {
@@ -42,7 +43,9 @@ const reduser = (state = initialState, action) => {
     case 'FAST':
       return { ...state, fast: true, cheap: false };
     case 'ADD_TICKETS':
-      return {...state, tickets: [...state.tickets, ...action.payload]};
+      return { ...state, tickets: [...state.tickets, ...action.payload] };
+    case 'ADD_SEARCH_ID':
+      return {...state, ...action.payload};
     default:
       return state;
   }
