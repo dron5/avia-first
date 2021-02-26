@@ -4,19 +4,18 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { Button } from "antd";
-// import { fetchTickets } from "../../asyncActions/tickets";
-import * as actions from '../../store/actions';
+import * as fetch from "../../asyncActions/fetchStuff";
 
 import classes from './Footer.module.scss';
 
-const Footer = ({fetchTickets}) =>(
+const Footer = ({fetchSearchId}) =>(
   <footer className={classes.App__footer}>
     <Button
       type="primary"
-      onClick={()=> fetchTickets()}
+      onClick={()=> fetchSearchId()}
       className={classes.Footer__btn}>Показать ещё 5 билетов
     </Button>
   </footer>
 );
 
-export default connect(null, actions)(Footer);
+export default connect(null, fetch)(Footer);
