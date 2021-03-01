@@ -23,7 +23,6 @@ const Tickets = ({ searchId, fetchSearchId, fetchTickets, tickets }) => {
       price={price}
       carrier={carrier}
       segments={segments}
-      
     />
     );
 });
