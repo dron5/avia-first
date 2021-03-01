@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
@@ -7,17 +8,28 @@ import Ticket from "../Ticket";
 import classes from './Tickets.module.scss';
 
 const Tickets = ({ searchId, fetchSearchId, fetchTickets, tickets }) => {
-useEffect(() => {
+  useEffect(() => {
     if (!searchId) fetchSearchId();
-}, [searchId, fetchSearchId]);
+  }, [searchId, fetchSearchId]);
 
-useEffect(() => {
+  useEffect(() => {
     if (searchId) fetchTickets(searchId);
-}, [searchId, fetchTickets]);  
-console.log('inTickets :', tickets);
+  }, [searchId, fetchTickets]);
+  const ticketList = tickets.map((ticket, id) => {
+    const { price, carrier, segments } = ticket;
+    return (
+    <Ticket
+      key={carrier+price+id}
+      price={price}
+      carrier={carrier}
+      segments={segments}
+      
+    />
+    );
+});
 return (
     <main className={classes.App}>
-      <Ticket />
+    {ticketList}
     </main>
   );
 };

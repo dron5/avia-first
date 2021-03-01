@@ -19,6 +19,7 @@ $boxShadow: 0 2px 8px rgba(0,0,0,.1);
   background-color: #fff;
   border-top-left-radius: 5px !important;
   border-bottom-left-radius: 5px !important;
+  outline: none
 }
 .Header__btn-fast{
   margin-bottom: 0px;
@@ -28,6 +29,7 @@ $boxShadow: 0 2px 8px rgba(0,0,0,.1);
   background-color: #fff;
   border-top-right-radius: 5px !important;
   border-bottom-right-radius: 5px !important;
+  outline: none
 }
 .btn__active{
   background-color: $backgroundFooter;

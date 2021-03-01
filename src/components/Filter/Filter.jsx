@@ -7,9 +7,7 @@ import * as actions from '../../store/actions';
 
 import classes from './Filter.module.scss';
 
-const Filter = ({ searchId, all, none, one, two, three, onClick }) => {
-  console.log(searchId);
-  return (
+const Filter = ({ all, none, one, two, three, onClick }) => (
     <aside className={classes.Filter}>
       <span className={classes.Filter__title}>количество пересадок</span>
       <Checkbox
@@ -54,7 +52,6 @@ const Filter = ({ searchId, all, none, one, two, three, onClick }) => {
       </Checkbox>
     </aside>
   );
-};
 
 const mapStateToProps = ( state ) => ({
   all: state.all,

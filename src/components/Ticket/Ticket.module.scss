@@ -1,6 +1,6 @@
 $backgroundColor: #fff;
 $boxShadow: 0 2px 8px rgba(0,0,0,.1);
-$backgroundAppColor: #e5e5e5;
+$backgroundAppColor: #A0B0B9;
 
 .Ticket{
   display: flex;
@@ -31,4 +31,13 @@ $backgroundAppColor: #e5e5e5;
 }
 .title{
   color: $backgroundAppColor;
+  font-size: 13px;
+  font-weight: 600;
+}
+.Ticket__part{
+  width: 22%;
+}
+.Ticket__info{
+  font-weight: 600;
+  font-size: 14px;
 }
