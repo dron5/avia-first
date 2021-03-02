@@ -9,7 +9,7 @@ export const fetchSearchId = () => (dispatch) => {
 };
   
 export const fetchTickets = (id) => (dispatch) => {
-    fetch(`https://front-test.beta.aviasales.ru/tickets?searchId=${id}`)
-      .then((response) => response.json())
-      .then(json => dispatch(addTickets(json.tickets)));
+  fetch(`https://front-test.beta.aviasales.ru/tickets?searchId=${id}`)
+    .then((response) => response.json())
+    .then(json => dispatch(addTickets(json.tickets)));
 };

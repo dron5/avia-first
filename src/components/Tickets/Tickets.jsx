@@ -13,21 +13,24 @@ const Tickets = ({ searchId, fetchSearchId, fetchTickets, tickets }) => {
     if (!searchId) fetchSearchId();
     if (searchId !=='') fetchTickets(searchId);
   }, [searchId, fetchSearchId, fetchTickets]);
-
-  const ticketList = tickets.map((ticket, id) => {
-    const { price, carrier, segments } = ticket;
-    return (
-    <Ticket
-      key={carrier+price+id}
-      price={price}
-      carrier={carrier}
-      segments={segments}
-    />
-    );
-});
+  let ticketList = [];
+  if (tickets) {
+    ticketList = tickets.map((ticket, id) => {
+      const { price, carrier, segments } = ticket;
+      return (
+        <Ticket
+          key={carrier + price + id}
+          price={price}
+          carrier={carrier}
+          segments={segments}
+        />
+      );
+    });
+  }
+  const rendTicketList = ticketList.slice(0, 5);
 return (
     <main className={classes.App}>
-    {ticketList}
+    {rendTicketList}
     </main>
   );
 };
@@ -36,5 +39,5 @@ const mapStateToProps = (state) => ({
   searchId: getSearchId(state),
   tickets: getTickets(state),
 });
-
+// reselect
 export default connect(mapStateToProps, fetch)(Tickets);

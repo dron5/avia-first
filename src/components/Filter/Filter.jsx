@@ -54,12 +54,12 @@ const Filter = ({ all, none, one, two, three, onClick }) => (
   );
 
 const mapStateToProps = ( state ) => ({
-  all: state.all,
-  none: state.none,
-  one: state.one,
-  two: state.two,
-  three: state.three,
-  searchId: state.searchId,
+  all: state.reduser.all,
+  none: state.reduser.none,
+  one: state.reduser.one,
+  two: state.reduser.two,
+  three: state.reduser.three,
+  searchId: state.reduser.searchId,
   });
 
 export default connect(mapStateToProps, actions)(Filter);
