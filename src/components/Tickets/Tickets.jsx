@@ -6,15 +6,14 @@ import { connect } from 'react-redux';
 import * as fetch from "../../asyncActions/fetchStuff";
 import Ticket from "../Ticket";
 import classes from './Tickets.module.scss';
+import { getSearchId, getTickets } from '../../store/selectors';
 
 const Tickets = ({ searchId, fetchSearchId, fetchTickets, tickets }) => {
   useEffect(() => {
     if (!searchId) fetchSearchId();
-  }, [searchId, fetchSearchId]);
+    if (searchId !=='') fetchTickets(searchId);
+  }, [searchId, fetchSearchId, fetchTickets]);
 
-  useEffect(() => {
-    if (searchId) fetchTickets(searchId);
-  }, [searchId, fetchTickets]);
   const ticketList = tickets.map((ticket, id) => {
     const { price, carrier, segments } = ticket;
     return (
@@ -32,9 +31,10 @@ return (
     </main>
   );
 };
+
 const mapStateToProps = (state) => ({
-  searchId: state.searchId,
-  tickets: state.tickets,
+  searchId: getSearchId(state),
+  tickets: getTickets(state),
 });
 
 export default connect(mapStateToProps, fetch)(Tickets);
