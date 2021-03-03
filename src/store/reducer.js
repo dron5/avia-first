@@ -17,12 +17,20 @@ const initState = {
   one: [],
   two: [],
   three: [],
+  stop: false,
 };
 
 const tickets = (state = initState, action) => {
   switch (action.type) {
     case 'ADD_TICKETS':
-      return {...state, all: [...state.all, ...action.payload] };
+      return {
+        ...state, all: [...state.all, ...action.payload.all],
+        stop: action.payload.stop,
+        none: [...state.none, ...action.payload.none],
+        one: [...state.one, ...action.payload.one],
+        two: [...state.two, ...action.payload.two],
+        three: [...state.three, ...action.payload.three],
+      };
     default:
       return state;
   }
