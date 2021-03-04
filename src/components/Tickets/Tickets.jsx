@@ -15,7 +15,8 @@ import {
 const Tickets = ({
   searchId, addSearchId, addTickets, ticketsAll,
   ticketsNone, ticketsTwo, ticketsThree, ticketsOne, stop, cheap }) => {
-  const [ slice, setSlice ] = useState(5);
+  
+  const [slice, setSlice] = useState(5);
   useEffect(() => {
     // if (ticketsAll===false) setSlice(5); ///если нужен сброс до 5 билетов
     if (!searchId) addSearchId();
@@ -27,9 +28,6 @@ const Tickets = ({
   };
   let ticketList = [];
   let tickets = [];
-  if (ticketsAll) {
-    tickets = ticketsAll;
-  } 
   const stopsNone = ticketsNone || [];
   const stopsOne = ticketsOne || [];
   const stopsTwo = ticketsTwo || [];
@@ -61,11 +59,12 @@ const Tickets = ({
 return (
     <main className={classes.App}>
     {rendTicketList}
-    <Button
-      type="primary"
-      onClick={showMoreTickets}
-      className={classes.Footer__btn}>Показать ещё 5 билетов
-    </Button>
+    {ticketsAll &&
+      <Button
+        type="primary"
+        onClick={showMoreTickets}
+        className={classes.Footer__btn}>Показать ещё 5 билетов
+      </Button>}
     </main>
   );
 };
