@@ -1,7 +1,8 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { Button } from "antd";
 
 import * as fetch from "../../store/actions";
 import Ticket from "../Ticket";
@@ -14,12 +15,16 @@ import {
 const Tickets = ({
   searchId, addSearchId, addTickets, ticketsAll,
   ticketsNone, ticketsTwo, ticketsThree, ticketsOne, stop, cheap }) => {
-  
+  const [ slice, setSlice ] = useState(5);
   useEffect(() => {
+    // if (ticketsAll===false) setSlice(5); ///если нужен сброс до 5 билетов
     if (!searchId) addSearchId();
     if (!stop && searchId !== '') addTickets(searchId);
-  }, [searchId, stop, addSearchId, addTickets]);
+  }, [searchId, stop, addSearchId, addTickets, ticketsAll, slice]);
   
+  const showMoreTickets = () => {
+    setSlice(slice + 5);
+  };
   let ticketList = [];
   let tickets = [];
   if (ticketsAll) {
@@ -32,12 +37,12 @@ const Tickets = ({
   
   tickets = [...stopsNone, ...stopsOne, ...stopsTwo, ...stopsThree];
 
-
   if ((tickets)) {
     if (cheap) {
       ticketList = tickets.sort((prev, next) => prev.price - next.price);
     } else {
-      ticketList = tickets.sort((prev, next) => (prev.segments[0].duration + (prev.segments[1].duration) -
+      ticketList = tickets.sort((prev, next) =>
+        (prev.segments[0].duration + (prev.segments[1].duration) -
         (next.segments[0].duration + next.segments[0].duration)));
     }
     ticketList = ticketList.map((ticket, id) => {
@@ -52,10 +57,15 @@ const Tickets = ({
       );
     });
   }
-  const rendTicketList = ticketList.slice(0, 5);
+  const rendTicketList = ticketList.slice(0, slice);
 return (
     <main className={classes.App}>
     {rendTicketList}
+    <Button
+      type="primary"
+      onClick={showMoreTickets}
+      className={classes.Footer__btn}>Показать ещё 5 билетов
+    </Button>
     </main>
   );
 };

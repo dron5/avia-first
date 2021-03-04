@@ -13,7 +13,7 @@ const Footer = () => (
         type="primary"
         onClick={() => {}}
         className={classes.Footer__btn}>Показать ещё 5 билетов
-    </Button>
+      </Button>
     </footer>
   );
 

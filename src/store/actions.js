@@ -32,8 +32,9 @@ const getFiltered = (tickets) => {
 
 export const addTickets = (id) => async (dispatch) => {
   const response = await fetchTickets(id);
+  const { stop }  = response;
   const tickets = getFiltered(response.tickets);
-  dispatch({ type: 'ADD_TICKETS', payload: tickets });
+  dispatch({ type: 'ADD_TICKETS', payload: { tickets, stop } });
 };
 
 

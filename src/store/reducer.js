@@ -24,12 +24,12 @@ const tickets = (state = initState, action) => {
   switch (action.type) {
     case 'ADD_TICKETS':
       return {
-        ...state, all: [...state.all, ...action.payload.all],
+        ...state, all: [...state.all, ...action.payload.tickets.all],
         stop: action.payload.stop,
-        none: [...state.none, ...action.payload.none],
-        one: [...state.one, ...action.payload.one],
-        two: [...state.two, ...action.payload.two],
-        three: [...state.three, ...action.payload.three],
+        none: [...state.none, ...action.payload.tickets.none],
+        one: [...state.one, ...action.payload.tickets.one],
+        two: [...state.two, ...action.payload.tickets.two],
+        three: [...state.three, ...action.payload.tickets.three],
       };
     default:
       return state;
@@ -53,7 +53,7 @@ const allReduser = (state) =>
    ['all', 'none', 'one', 'two', 'three']
     .reduce((acc, el) => ({ ...acc, [el]: !state.all }), {});
 
-const reduser = (state = initialState, action) => {
+const filteReduser = (state = initialState, action) => {
   switch (action.type) {
     case 'ALL':
       return { ...state, ...allReduser(state) };
@@ -75,7 +75,7 @@ const reduser = (state = initialState, action) => {
 
 const rootReduser = combineReducers({
   tickets,
-  reduser
+  filteReduser
 });
 // const rootReduser = (state = {}, action) => ({
 //     tickets: tickets(state.tickets, action),

@@ -29,8 +29,8 @@ const Header = ({ cheap, fast, onClick }) => (
   );
 
 const mapStateToProps = (state) => ({
-  cheap: state.reduser.cheap,
-  fast: state.reduser.fast,
+  cheap: state.filteReduser.cheap,
+  fast: state.filteReduser.fast,
   });
 
 export default connect(mapStateToProps, actions)(Header);
