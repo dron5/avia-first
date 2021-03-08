@@ -6,4 +6,5 @@ export const getTicketsNone = (state) => state.filteReduser.none && state.ticket
 export const getTicketsOne = (state) => state.filteReduser.one && state.tickets.one;
 export const getTicketsTwo = (state) => state.filteReduser.two && state.tickets.two;
 export const getTicketsThree = (state) => state.filteReduser.three && state.tickets.three;
+export const getFetching = (state) => state.filteReduser.isFetching;
 export const getStop = (state) => state.tickets.stop;

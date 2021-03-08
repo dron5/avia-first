@@ -9,6 +9,7 @@ const initialState = {
   cheap: true,
   fast: false,
   searchId: '',
+  isFetching: false,
 };
 
 const initState = {
@@ -46,7 +47,7 @@ const enumReduser = (state, action) => {
   if (!(answer.length === 0) && !(answer.length === 4)) {
     return  { ...enumList, all: false };
   } 
-  return { ...enumList, all: enumList.none}; 
+  return { ...enumList, all: enumList.none }; 
  };
 
 const allReduser = (state) => 
@@ -67,7 +68,9 @@ const filteReduser = (state = initialState, action) => {
     case 'FAST':
       return { ...state, fast: true, cheap: false };
     case 'ADD_SEARCH_ID':
-      return {...state, ...action.payload};
+      return { ...state, ...action.payload };
+    case 'FETCHING':
+      return {...state, isFetching: action.payload};
     default:
       return state;
   }

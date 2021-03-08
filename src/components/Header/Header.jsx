@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/actions';
+import { getCheap } from '../../store/selectors';
 
 import classes from './Header.module.scss';
 
@@ -25,11 +26,11 @@ const Header = ({ cheap, fast, onClick }) => (
           : `${classes['Header__btn-fast']}`}>
         Самый быстрый
     </button>
-    </header>
+  </header> 
   );
 
 const mapStateToProps = (state) => ({
-  cheap: state.filteReduser.cheap,
+  cheap: getCheap(state),
   fast: state.filteReduser.fast,
   });
 

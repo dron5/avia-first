@@ -2,18 +2,19 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { Button } from "antd";
+import { Button } from 'antd';
 
-import * as fetch from "../../store/actions";
-import Ticket from "../Ticket";
+import * as fetch from '../../store/actions';
+import Ticket from '../Ticket';
+import loading from '../../img/loading.gif';
 import classes from './Tickets.module.scss';
 import {
   getSearchId, getTicketsAll, getTicketsNone, getTicketsOne,
-  getTicketsTwo, getTicketsThree, getStop, getCheap
+  getTicketsTwo, getTicketsThree, getStop, getCheap, getFetching
 } from '../../store/selectors';
 
 const Tickets = ({
-  searchId, addSearchId, addTickets, ticketsAll,
+  searchId, addSearchId, addTickets, ticketsAll, isFetching,
   ticketsNone, ticketsTwo, ticketsThree, ticketsOne, stop, cheap }) => {
   
   const [slice, setSlice] = useState(5);
@@ -57,9 +58,15 @@ const Tickets = ({
   }
   const rendTicketList = ticketList.slice(0, slice);
 return (
-    <main className={classes.App}>
+  <main className={classes.App}>
+    <div className={classes.Header__img}>  
+    {isFetching ? 
+            <img src={loading} alt="loading" />
+        : null}
+    {!tickets.length && <span>Рейсов, подходящих под заданные фильтры, не найдено</span>}
+    </div> 
     {rendTicketList}
-    {ticketsAll &&
+    { !(!tickets.length) &&
       <Button
         type="primary"
         onClick={showMoreTickets}
@@ -77,6 +84,7 @@ const mapStateToProps = (state) => ({
   ticketsOne: getTicketsOne(state),
   ticketsTwo: getTicketsTwo(state),
   ticketsThree: getTicketsThree(state),
+  isFetching: getFetching(state),
   stop: getStop(state),
 });
 // reselect

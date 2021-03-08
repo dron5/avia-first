@@ -1,3 +1,5 @@
+$appColor: #f3f7fa;
+
 .Footer__btn{
   margin-bottom: 0px;
   width: 100%;
@@ -5,4 +7,14 @@
   border-radius: 5px !important;
   margin-bottom: 20px;
   margin-top: 10px;
+}
+.Header__img{
+  min-height: 29px;
+  text-align: center;
+  background-color: $appColor;
+  span {
+		display: inline-block;
+		margin-top: 0;
+		min-height: 130px;
+	}
 }
