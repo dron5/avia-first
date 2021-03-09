@@ -28,14 +28,8 @@ const Tickets = ({
     setSlice(slice + 5);
   };
   let ticketList = [];
-  let tickets = [];
-  const stopsNone = ticketsNone || [];
-  const stopsOne = ticketsOne || [];
-  const stopsTwo = ticketsTwo || [];
-  const stopsThree = ticketsThree || [];
-  
-  tickets = [...stopsNone, ...stopsOne, ...stopsTwo, ...stopsThree];
-
+  const tickets = [...(ticketsNone || []), ...(ticketsOne || []), ...(ticketsTwo || []), ...(ticketsThree || [])];
+  // console.log(stop);
   if ((tickets)) {
     if (cheap) {
       ticketList = tickets.sort((prev, next) => prev.price - next.price);

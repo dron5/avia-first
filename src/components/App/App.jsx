@@ -12,11 +12,11 @@ const App = () => (
           <img src={fly} alt="logo"/>
       </div>
       <div className={classes.App__wrapper}>
-      <Filter />
-      <div className={classes.App__container}>
-        <Header />
-        <Tickets />
-      </div>
+        <Filter />
+        <div className={classes.App__container}>
+          <Header />
+          <Tickets />
+        </div>
       </div>
     </div>
   );
