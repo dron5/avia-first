@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Button } from 'antd';
 
 import * as fetch from '../../store/actions';
-import Ticket from '../../components/Ticket';
+import Tickets from '../../components/Tickets';
 import Filter from '../../components/Filter';
 import Header from '../../components/Header';
 import loading from '../../img/loading.gif';
@@ -15,7 +15,7 @@ import {
 	getTicketsTwo, getTicketsThree, getStop, getCheap, getFetching
 } from '../../store/selectors';
 
-const Tickets = ({
+const Main = ({
 	searchId, addSearchId, addTickets, ticketsAll, isFetching,
 	ticketsNone, ticketsTwo, ticketsThree, ticketsOne, stop, cheap }) => {
 	
@@ -30,7 +30,9 @@ const Tickets = ({
 		setSlice(slice + 5);
 	};
 	let ticketList = [];
-	const tickets = [...(ticketsNone || []), ...(ticketsOne || []), ...(ticketsTwo || []), ...(ticketsThree || [])];
+	const tickets = [
+		...(ticketsNone || []), ...(ticketsOne || []), 
+		...(ticketsTwo || []), ...(ticketsThree || [])];
 
 	if ((tickets)) {
 		if (cheap) {
@@ -40,35 +42,32 @@ const Tickets = ({
 				(prev.segments[0].duration + (prev.segments[1].duration) -
 				(next.segments[0].duration + next.segments[0].duration)));
 		}
-		ticketList = ticketList.map((ticket, id) => {
-			const { price, carrier, segments } = ticket;
-			return (
-				<Ticket
-					key={carrier + price + id}
-					price={price}
-					carrier={carrier}
-					segments={segments}
-				/>
-			);
-		});
 	}
-	const renderingTickets = ticketList.slice(0, slice);
+	const ticketsForRender = ticketList.slice(0, slice);
 return (
-	<main className={classes.App}>
-		<div className={classes.Header__img}>  
-		{isFetching ? 
-						<img src={loading} alt="loading" />
-				: null}
-		{!tickets.length && <span>Рейсов, подходящих под заданные фильтры, не найдено</span>}
-		</div> 
-		{renderingTickets}
-		{ !(!tickets.length) &&
-			<Button
-				type="primary"
-				onClick={showMoreTickets}
-				className={classes.Footer__btn}>Показать ещё 5 билетов
-			</Button>}
-		</main>
+		<div className={classes.App__wrapper}>
+			<Filter />
+			<div className={classes.App__container}>
+				<Header />
+				<main className={classes.App}>
+					<div className={classes.Header__img}>  
+					{isFetching ? 
+									<img src={loading} alt="loading" />
+							: null}
+					{!tickets.length && <span>Рейсов, подходящих под заданные фильтры, не найдено</span>}
+					</div>
+					<Tickets
+						tickets={ticketsForRender}
+					/>
+					{ !(!tickets.length) &&
+						<Button
+							type="primary"
+							onClick={showMoreTickets}
+							className={classes.Footer__btn}>Показать ещё 5 билетов
+						</Button>}
+					</main>
+			</div>
+		</div>
 	);
 };
 
@@ -84,4 +83,4 @@ const mapStateToProps = (state) => ({
 	stop: getStop(state),
 });
 // reselect
-export default connect(mapStateToProps, fetch)(Tickets);
+export default connect(mapStateToProps, fetch)(Main);

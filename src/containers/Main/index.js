@@ -1,3 +1,3 @@
-import Tickets from "./Tickets";
+import Main from "./Main";
 
-export default Tickets;
+export default Main;
