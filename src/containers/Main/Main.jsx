@@ -2,11 +2,11 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { Button } from 'antd';
 
 import * as fetch from '../../store/actions';
 import Tickets from '../../components/Tickets';
 import Filter from '../../components/Filter';
+import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import loading from '../../img/loading.gif';
 import classes from './Main.module.scss';
@@ -21,10 +21,10 @@ const Main = ({
 	
 	const [slice, setSlice] = useState(5);
 	useEffect(() => {
-		// if (ticketsAll===false) setSlice(5); ///если нужен сброс до 5 билетов
+		if (ticketsAll===false) setSlice(5); /// если нужен сброс до 5 билетов
 		if (!searchId) addSearchId();
 		if (!stop && searchId !== '') addTickets(searchId);
-	}, [searchId, stop, addSearchId, addTickets, ticketsAll, slice]);
+	}, [searchId, stop, addSearchId, addTickets, ticketsAll, ticketsOne, slice]);
 	
 	const showMoreTickets = () => {
 		setSlice(slice + 5);
@@ -50,7 +50,7 @@ return (
 			<div className={classes.App__container}>
 				<Header />
 				<main className={classes.App}>
-					<div className={classes.Header__img}>  
+					<div className={classes.App__img}>  
 					{isFetching ? 
 									<img src={loading} alt="loading" />
 							: null}
@@ -60,11 +60,8 @@ return (
 						tickets={ticketsForRender}
 					/>
 					{ !(!tickets.length) &&
-						<Button
-							type="primary"
-							onClick={showMoreTickets}
-							className={classes.Footer__btn}>Показать ещё 5 билетов
-						</Button>}
+						<Footer showMoreTickets={showMoreTickets}/>
+					}
 					</main>
 			</div>
 		</div>

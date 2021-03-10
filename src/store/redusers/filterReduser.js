@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux';
-
 const initialState = {
   all: false,
   none: false,
@@ -10,31 +8,6 @@ const initialState = {
   fast: false,
   searchId: '',
   isFetching: false,
-};
-
-const initState = {
-  all: [],
-  none: [],
-  one: [],
-  two: [],
-  three: [],
-  stop: false,
-};
-
-const tickets = (state = initState, action) => {
-  switch (action.type) {
-    case 'ADD_TICKETS':
-      return {
-        ...state, all: [...state.all, ...action.payload.tickets.all],
-        stop: action.payload.stop,
-        none: [...state.none, ...action.payload.tickets.none],
-        one: [...state.one, ...action.payload.tickets.one],
-        two: [...state.two, ...action.payload.tickets.two],
-        three: [...state.three, ...action.payload.tickets.three],
-      };
-    default:
-      return state;
-  }
 };
 
 const enumReduser = (state, action) => {
@@ -50,7 +23,7 @@ const enumReduser = (state, action) => {
   return { ...enumList, all: enumList.none }; 
  };
 
-const allReduser = (state) => 
+ const allReduser = (state) => 
    ['all', 'none', 'one', 'two', 'three']
     .reduce((acc, el) => ({ ...acc, [el]: !state.all }), {});
 
@@ -75,14 +48,4 @@ const filteReduser = (state = initialState, action) => {
       return state;
   }
 };
-
-const rootReduser = combineReducers({
-  tickets,
-  filteReduser
-});
-// const rootReduser = (state = {}, action) => ({
-//     tickets: tickets(state.tickets, action),
-//     reduser: reduser(state.reduser, action)
-//   });
-
-export default rootReduser;
+export default  filteReduser;

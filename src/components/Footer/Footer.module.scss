@@ -1,7 +1,7 @@
 $boxShadow: 0 2px 8px rgba(0,0,0,.1);
 $backgroundFooter: #2196F3;
 
-.App__footer{
+.footer{
   text-align: center;
   height: 50px;
   width: 100%;
@@ -11,7 +11,7 @@ $backgroundFooter: #2196F3;
   box-shadow: $boxShadow;
   background-color:  $backgroundFooter;
 }
-.Footer__btn{
+.btn__footer{
   margin-bottom: 0px;
   width: 100%;
   height: 50px !important;

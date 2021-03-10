@@ -1,10 +1,10 @@
 export const getSearchId = (state) => state.filteReduser.searchId;
 export const getCheap = (state) => state.filteReduser.cheap;
 export const getSortedTickets = (state) => state.sortedTickets;
-export const getTicketsAll = (state) => state.filteReduser.all && state.tickets.all.length;
-export const getTicketsNone = (state) => state.filteReduser.none && state.tickets.none;
-export const getTicketsOne = (state) => state.filteReduser.one && state.tickets.one;
-export const getTicketsTwo = (state) => state.filteReduser.two && state.tickets.two;
-export const getTicketsThree = (state) => state.filteReduser.three && state.tickets.three;
+export const getTicketsAll = (state) => state.filteReduser.all && state.ticketsReduser.all.length;
+export const getTicketsNone = (state) => state.filteReduser.none && state.ticketsReduser.none;
+export const getTicketsOne = (state) => state.filteReduser.one && state.ticketsReduser.one;
+export const getTicketsTwo = (state) => state.filteReduser.two && state.ticketsReduser.two;
+export const getTicketsThree = (state) => state.filteReduser.three && state.ticketsReduser.three;
 export const getFetching = (state) => state.filteReduser.isFetching;
-export const getStop = (state) => state.tickets.stop;
+export const getStop = (state) => state.ticketsReduser.stop;
