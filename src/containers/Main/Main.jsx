@@ -2,11 +2,11 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { Button } from "antd";
 
 import * as fetch from '../../store/actions';
 import Tickets from '../../components/Tickets';
 import Filter from '../../components/Filter';
-import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import loading from '../../img/loading.gif';
 import classes from './Main.module.scss';
@@ -21,14 +21,15 @@ const Main = ({
 	
 	const [slice, setSlice] = useState(5);
 	useEffect(() => {
-		if (ticketsAll===false) setSlice(5); /// если нужен сброс до 5 билетов
 		if (!searchId) addSearchId();
 		if (!stop && searchId !== '') addTickets(searchId);
-	}, [searchId, stop, addSearchId, addTickets, ticketsAll, ticketsOne, slice]);
+	}, [searchId, stop, addSearchId, addTickets, ticketsAll, 
+		ticketsOne, ticketsNone, ticketsTwo, ticketsThree, slice]);
 	
 	const showMoreTickets = () => {
 		setSlice(slice + 5);
 	};
+	
 	let ticketList = [];
 	const tickets = [
 		...(ticketsNone || []), ...(ticketsOne || []), 
@@ -45,22 +46,24 @@ const Main = ({
 	}
 	const ticketsForRender = ticketList.slice(0, slice);
 return (
-		<div className={classes.App__wrapper}>
+		<div className={classes.Main__wrapper}>
 			<Filter />
-			<div className={classes.App__container}>
+			<div className={classes.Main__container}>
 				<Header />
-				<main className={classes.App}>
-					<div className={classes.App__img}>  
+				<main className={classes.Main}>
+					<div className={classes.Main__img}>  
 					{isFetching ? 
 									<img src={loading} alt="loading" />
 							: null}
 					{!tickets.length && <span>Рейсов, подходящих под заданные фильтры, не найдено</span>}
 					</div>
-					<Tickets
-						tickets={ticketsForRender}
-					/>
+					<Tickets tickets={ticketsForRender} />
 					{ !(!tickets.length) &&
-						<Footer showMoreTickets={showMoreTickets}/>
+						<Button
+							type="primary"
+							onClick={showMoreTickets}
+							className={classes.Main__btn}>Показать ещё 5 билетов
+						</Button>
 					}
 					</main>
 			</div>
