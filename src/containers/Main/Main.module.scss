@@ -32,3 +32,12 @@ $appColor: #f3f7fa;
   margin-right: 103px;
   margin-left: auto;
 }
+@media screen and (max-width: 992px) {
+  .Main__wrapper {
+    flex-direction: column;
+  }
+  .Main__container {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
