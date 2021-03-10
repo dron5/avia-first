@@ -1,5 +1,6 @@
 export const getSearchId = (state) => state.filteReduser.searchId;
 export const getCheap = (state) => state.filteReduser.cheap;
+export const getFast = (state) => state.filteReduser.fast;
 export const getSortedTickets = (state) => state.sortedTickets;
 export const getTicketsAll = (state) => state.filteReduser.all && state.ticketsReduser.all.length;
 export const getTicketsNone = (state) => state.filteReduser.none && state.ticketsReduser.none;
