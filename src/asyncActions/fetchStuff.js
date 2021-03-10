@@ -5,10 +5,10 @@ const baseRequest = async (arg) => {
 };
 
 export const fetchSearchId = async () => {
-  const response = await baseRequest('/search');
+  const response = await baseRequest("/search");
   return response;
 };
-  
+
 export const fetchTickets = async (id) => {
   const response = await baseRequest(`/tickets?searchId=${id}`);
   return response;

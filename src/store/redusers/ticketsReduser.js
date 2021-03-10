@@ -9,9 +9,10 @@ const initState = {
 
 const ticketsReduser = (state = initState, action) => {
   switch (action.type) {
-    case 'ADD_TICKETS':
+    case "ADD_TICKETS":
       return {
-        ...state, all: [...state.all, ...action.payload.tickets.all],
+        ...state,
+        all: [...state.all, ...action.payload.tickets.all],
         stop: action.payload.stop,
         none: [...state.none, ...action.payload.tickets.none],
         one: [...state.one, ...action.payload.tickets.one],

@@ -1,10 +1,10 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/prop-types */
-import React from 'react';
-import Ticket from '../Ticket';
+import React from "react";
+import Ticket from "../Ticket";
 
-const Tickets = ({tickets}) => {
-	let ticketList = [];
+const Tickets = ({ tickets }) => {
+  let ticketList = [];
   ticketList = tickets.map((ticket, id) => {
     const { price, carrier, segments } = ticket;
     return (
@@ -16,8 +16,6 @@ const Tickets = ({tickets}) => {
       />
     );
   });
-  return (
-		[...ticketList]
-		);
+  return [...ticketList];
 };
 export default Tickets;

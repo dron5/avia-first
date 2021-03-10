@@ -1,8 +1,8 @@
 $backgroundColor: #fff;
-$boxShadow: 0 2px 8px rgba(0,0,0,.1);
-$backgroundAppColor: #A0B0B9;
+$boxShadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+$backgroundAppColor: #a0b0b9;
 
-.Ticket{
+.Ticket {
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -15,30 +15,30 @@ $backgroundAppColor: #A0B0B9;
   box-shadow: $boxShadow;
   background-color: $backgroundColor;
 }
-.Ticket__price{
+.Ticket__price {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   font-size: 24px;
-  color: #2196F3;
+  color: #2196f3;
   margin-top: 0;
 }
-.Ticket__direction{
+.Ticket__direction {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   margin-bottom: 0px;
   margin-top: auto;
 }
-.title{
+.title {
   color: $backgroundAppColor;
   font-size: 13px;
   font-weight: 600;
 }
-.Ticket__part{
+.Ticket__part {
   width: 22%;
 }
-.Ticket__info{
+.Ticket__info {
   font-weight: 600;
   font-size: 14px;
 }

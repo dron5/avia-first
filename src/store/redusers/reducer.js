@@ -1,10 +1,10 @@
-import { combineReducers } from 'redux';
-import filteReduser from './filterReduser';
-import ticketsReduser from './ticketsReduser';
+import { combineReducers } from "redux";
+import filteReduser from "./filterReduser";
+import ticketsReduser from "./ticketsReduser";
 
 const rootReduser = combineReducers({
   ticketsReduser,
-  filteReduser
+  filteReduser,
 });
 
 export default rootReduser;

@@ -1,8 +1,8 @@
 $appColor: #f3f7fa;
 $backgroundAppColor: #e5e5e5;
 $backgroundColor: #fff;
-$backgroundFooter: #2196F3;
-$boxShadow: 0 2px 8px rgba(0,0,0,.1);
+$backgroundFooter: #2196f3;
+$boxShadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
 body {
   display: flex;
@@ -11,7 +11,7 @@ body {
   background-color: $backgroundAppColor !important;
   margin: 0;
 }
-.wrapper{
+.wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -20,9 +20,8 @@ body {
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-
 }
-.logo{
+.logo {
   text-align: center;
   width: 100%;
   margin: 0 auto;
@@ -34,7 +33,7 @@ body {
   width: 100%;
   margin: 0 auto;
 }
-.App__container{
+.App__container {
   display: flex;
   flex-direction: column;
   height: auto;
@@ -42,7 +41,7 @@ body {
   margin-right: 103px;
   margin-left: auto;
 }
-.App{
+.App {
   display: flex;
   flex-direction: column;
   height: auto;
