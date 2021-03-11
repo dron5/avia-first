@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
+// import TicketSegment from './TicketSegment';
 import classes from "./Ticket.module.scss";
 
 const Ticket = ({ price, carrier, segments }) => {
