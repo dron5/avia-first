@@ -41,6 +41,9 @@ const Ticket = ({ price, carrier, segments }) => {
           <img src={`http://pics.avs.io/99/36/${carrier}.png`} alt="LogoAvia" />
         </span>
       </div>
+      {/* <TicketSegment
+
+      /> */}
       <div className={classes.Ticket__direction}>
         <div className={classes.Ticket__part}>
           <div className={classes.title}>
@@ -61,6 +64,9 @@ const Ticket = ({ price, carrier, segments }) => {
           <div className={classes.Ticket__info}>{stopsTo}</div>
         </div>
       </div>
+      {/* <TicketSegment
+        
+      /> */}
       <div className={classes.Ticket__direction}>
         <div className={classes.Ticket__part}>
           <div className={classes.title}>
