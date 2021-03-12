@@ -1,11 +1,11 @@
-const ticketFilter = (digit) => (ticket) => (
+export const ticketFilter = (digit) => (ticket) => (
   (ticket.segments[0].stops.length === digit &&
     ticket.segments[1].stops.length < digit) ||
   (ticket.segments[1].stops.length === digit &&
     ticket.segments[0].stops.length < digit)
 );
 
-const getFiltered = (tickets) => {
+export const getFiltered = (tickets) => {
   const data = {};
   data.all = tickets;
   data.none = tickets.filter(
@@ -18,5 +18,3 @@ const getFiltered = (tickets) => {
   data.three = tickets.filter(ticketFilter(3));
   return data;
 };
-
-export default getFiltered;
