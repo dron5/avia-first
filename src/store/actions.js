@@ -1,4 +1,5 @@
 import { fetchTickets, fetchSearchId } from "../asyncActions/fetchStuff";
+import { ticketFilter } from "../tools/actionFilter";
 
 export const onClick = (name) => ({ type: name.target.name });
 
@@ -15,27 +16,9 @@ const getFiltered = (tickets) => {
       ticket.segments[0].stops.length === 0 &&
       ticket.segments[1].stops.length === 0
   );
-  data.one = tickets.filter(
-    (ticket) =>
-      (ticket.segments[0].stops.length === 1 &&
-        ticket.segments[1].stops.length < 1) ||
-      (ticket.segments[1].stops.length === 1 &&
-        ticket.segments[0].stops.length < 1)
-  );
-  data.two = tickets.filter(
-    (ticket) =>
-      (ticket.segments[0].stops.length === 2 &&
-        ticket.segments[1].stops.length < 2) ||
-      (ticket.segments[1].stops.length === 2 &&
-        ticket.segments[0].stops.length < 2)
-  );
-  data.three = tickets.filter(
-    (ticket) =>
-      (ticket.segments[0].stops.length === 3 &&
-        ticket.segments[1].stops.length < 3) ||
-      (ticket.segments[1].stops.length === 3 &&
-        ticket.segments[0].stops.length < 3)
-  );
+  data.one = tickets.filter(ticketFilter(1));
+  data.two = tickets.filter(ticketFilter(2));
+  data.three = tickets.filter(ticketFilter(3));
   return data;
 };
 
