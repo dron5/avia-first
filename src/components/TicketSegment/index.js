@@ -1,3 +1,3 @@
-import TicketSegment from './TicketSegment';
+import TicketSegment from "./TicketSegment";
 
 export default TicketSegment;

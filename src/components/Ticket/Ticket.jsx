@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-import TicketSegment from '../TicketSegment';
+import TicketSegment from "../TicketSegment";
 import classes from "./Ticket.module.scss";
 
 const Ticket = ({ price, carrier, segments }) => {
@@ -47,13 +47,13 @@ const Ticket = ({ price, carrier, segments }) => {
         destination={segments[0].destination}
       />
       <TicketSegment
-       countStops={stops(segments[1].stops.length)}
-       duration={segments[1].duration}
-       stops={segments[1].stops.join(" ")}
-       origin={segments[1].origin}
-       originTime={originTimeBack}
-       destinationTime={destinationTimeBack}
-       destination={segments[1].destination} 
+        countStops={stops(segments[1].stops.length)}
+        duration={segments[1].duration}
+        stops={segments[1].stops.join(" ")}
+        origin={segments[1].origin}
+        originTime={originTimeBack}
+        destinationTime={destinationTimeBack}
+        destination={segments[1].destination}
       />
     </div>
   );
