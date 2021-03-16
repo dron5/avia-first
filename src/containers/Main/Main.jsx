@@ -63,7 +63,7 @@ const Main = ({
     ...(ticketsTwo || []),
     ...(ticketsThree || []),
   ];
-  
+
   if (tickets) {
     if (cheap) {
       ticketList = tickets.sort((prev, next) => prev.price - next.price);
