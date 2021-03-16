@@ -63,15 +63,15 @@ const Main = ({
     ...(ticketsTwo || []),
     ...(ticketsThree || []),
   ];
-
+  
   if (tickets) {
     if (cheap) {
       ticketList = tickets.sort((prev, next) => prev.price - next.price);
     } else {
       ticketList = tickets.sort(
         (prev, next) =>
-          (prev.segments[0].duration +
-          prev.segments[1].duration) -
+          prev.segments[0].duration +
+          prev.segments[1].duration -
           (next.segments[0].duration + next.segments[1].duration)
       );
     }
@@ -116,5 +116,5 @@ const mapStateToProps = (state) => ({
   isFetching: getFetching(state),
   stop: getStop(state),
 });
-// reselect
+
 export default connect(mapStateToProps, fetch)(Main);
