@@ -66,8 +66,7 @@
   "lint-staged": {
     "*.{js, jsx}": [
       "npm run lint:fix",
-      "npm run format",
-      "git add"
+      "npm run format"
     ]
   }
 }
