@@ -7,7 +7,7 @@ import { getCheap, getFast } from "../../store/selectors";
 import classes from "./Header.module.scss";
 
 const Header = ({ cheap, fast, onClick }) => (
-  <header className={classes.app__header}>
+  <header className={classes.header}>
     <button
       type="button"
       name="CHEAP"
