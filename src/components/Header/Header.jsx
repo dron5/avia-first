@@ -15,7 +15,7 @@ const Header = ({ cheap, fast, onClick }) => (
       className={
         cheap
           ? `${classes["header__btn-cheap"]} ${classes.btn__active}`
-          : `${classes["geader__btn-cheap"]}`
+          : `${classes["header__btn-cheap"]}`
       }
     >
       Самый дешёвый
