@@ -70,9 +70,9 @@ const Main = ({
     } else {
       ticketList = tickets.sort(
         (prev, next) =>
-          prev.segments[0].duration +
-          prev.segments[1].duration -
-          (next.segments[0].duration + next.segments[0].duration)
+          (prev.segments[0].duration +
+          prev.segments[1].duration) -
+          (next.segments[0].duration + next.segments[1].duration)
       );
     }
   }
