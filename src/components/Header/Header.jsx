@@ -7,15 +7,15 @@ import { getCheap, getFast } from "../../store/selectors";
 import classes from "./Header.module.scss";
 
 const Header = ({ cheap, fast, onClick }) => (
-  <header className={classes.App__header}>
+  <header className={classes.app__header}>
     <button
       type="button"
       name="CHEAP"
       onClick={onClick}
       className={
         cheap
-          ? `${classes["Header__btn-cheap"]} ${classes.btn__active}`
-          : `${classes["Header__btn-cheap"]}`
+          ? `${classes["header__btn-cheap"]} ${classes.btn__active}`
+          : `${classes["geader__btn-cheap"]}`
       }
     >
       Самый дешёвый
@@ -26,8 +26,8 @@ const Header = ({ cheap, fast, onClick }) => (
       name="FAST"
       className={
         fast
-          ? `${classes["Header__btn-fast"]} ${classes.btn__active}`
-          : `${classes["Header__btn-fast"]}`
+          ? `${classes["header__btn-fast"]} ${classes.btn__active}`
+          : `${classes["header__btn-fast"]}`
       }
     >
       Самый быстрый

@@ -2,7 +2,7 @@ $backgroundColor: #fff;
 $boxShadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 $backgroundAppColor: #a0b0b9;
 
-.Ticket__direction {
+.ticket__direction {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
@@ -14,10 +14,10 @@ $backgroundAppColor: #a0b0b9;
   font-size: 13px;
   font-weight: 600;
 }
-.Ticket__part {
+.ticket__part {
   width: 22%;
 }
-.Ticket__info {
+.ticket__info {
   font-weight: 600;
   font-size: 14px;
 }

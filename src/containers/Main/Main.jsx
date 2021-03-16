@@ -78,12 +78,12 @@ const Main = ({
   }
   const ticketsForRender = ticketList.slice(0, slice);
   return (
-    <div className={classes.Main__wrapper}>
+    <div className={classes.main__wrapper}>
       <Filter />
-      <div className={classes.Main__container}>
+      <div className={classes.main__container}>
         <Header />
-        <main className={classes.Main}>
-          <div className={classes.Main__img}>
+        <main className={classes.main}>
+          <div className={classes.main__img}>
             {isFetching ? <img src={loading} alt="loading" /> : null}
             {!tickets.length && (
               <span>Рейсов, подходящих под заданные фильтры, не найдено</span>
@@ -94,7 +94,7 @@ const Main = ({
             <Button
               type="primary"
               onClick={showMoreTickets}
-              className={classes.Main__btn}
+              className={classes.main__btn}
             >
               Показать ещё 5 билетов
             </Button>

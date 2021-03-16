@@ -30,8 +30,8 @@ const Ticket = ({ price, carrier, segments }) => {
     }
   };
   return (
-    <div className={classes.Ticket}>
-      <div className={classes.Ticket__price}>
+    <div className={classes.ticket}>
+      <div className={classes.ticket__price}>
         <span>{price} Р</span>
         <span>
           <img src={`http://pics.avs.io/99/36/${carrier}.png`} alt="LogoAvia" />

@@ -8,8 +8,8 @@ import * as actions from "../../store/actions";
 import classes from "./Filter.module.scss";
 
 const Filter = ({ all, none, one, two, three, onClick }) => (
-  <aside className={classes.Filter}>
-    <span className={classes.Filter__title}>количество пересадок</span>
+  <aside className={classes.filter}>
+    <span className={classes.filter__title}>количество пересадок</span>
     <Checkbox
       className={classes["ant-checkbox-wrapper"]}
       checked={all}

@@ -3,7 +3,7 @@ $backgroundColor: #fff;
 $boxShadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 $appColor: #f3f7fa;
 
-.App__header {
+.app__header {
   height: 50px;
   width: 100%;
   margin-bottom: auto;
@@ -12,7 +12,7 @@ $appColor: #f3f7fa;
   box-shadow: $boxShadow;
   background-color: $backgroundColor;
 }
-.Header__btn-cheap {
+.header__btn-cheap {
   margin-bottom: 0px;
   border: none;
   width: 50%;
@@ -22,7 +22,7 @@ $appColor: #f3f7fa;
   border-bottom-left-radius: 5px !important;
   outline: none;
 }
-.Header__btn-fast {
+.header__btn-fast {
   margin-bottom: 0px;
   width: 50%;
   border: none;
@@ -35,7 +35,7 @@ $appColor: #f3f7fa;
 .btn__active {
   background-color: $backgroundFooter;
 }
-.Header__img {
+.header__img {
   min-height: 29px;
   text-align: center;
   background-color: $appColor;

@@ -3,7 +3,7 @@ $backgroundAppColor: #e5e5e5;
 $backgroundColor: #fff;
 $boxShadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
-.Filter {
+.filter {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -18,7 +18,7 @@ $boxShadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   box-shadow: $boxShadow;
   background-color: $backgroundColor;
 }
-.Filter__title {
+.filter__title {
   white-space: nowrap;
   font-family: "Arial";
   font-weight: 400;
@@ -29,7 +29,7 @@ $boxShadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin: 19px 0 0 0 !important;
 }
 @media screen and (max-width: 992px) {
-  .Filter {
+  .filter {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;

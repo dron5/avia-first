@@ -1,6 +1,6 @@
 $appColor: #f3f7fa;
 
-.Main__btn {
+.main__btn {
   margin-bottom: 0px;
   width: 100%;
   height: 50px !important;
@@ -8,7 +8,7 @@ $appColor: #f3f7fa;
   margin-bottom: 20px;
   margin-top: 10px;
 }
-.Main__img {
+.main__img {
   min-height: 29px;
   text-align: center;
   background-color: $appColor;
@@ -18,13 +18,13 @@ $appColor: #f3f7fa;
     min-height: 130px;
   }
 }
-.Main__wrapper {
+.main__wrapper {
   display: flex;
   height: auto;
   width: 100%;
   margin: 0 auto;
 }
-.Main__container {
+.main__container {
   display: flex;
   flex-direction: column;
   height: auto;
@@ -33,10 +33,10 @@ $appColor: #f3f7fa;
   margin-left: auto;
 }
 @media screen and (max-width: 992px) {
-  .Main__wrapper {
+  .main__wrapper {
     flex-direction: column;
   }
-  .Main__container {
+  .main__container {
     margin-right: auto;
     margin-left: auto;
   }
