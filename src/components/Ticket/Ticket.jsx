@@ -29,6 +29,7 @@ const Ticket = ({ price, carrier, segments }) => {
         return "0 ПЕРЕСАДОК";
     }
   };
+  
   return (
     <div className={classes.ticket}>
       <div className={classes.ticket__price}>
@@ -59,4 +60,4 @@ const Ticket = ({ price, carrier, segments }) => {
   );
 };
 
-export default Ticket;
+export default React.memo(Ticket);
